@@ -5,7 +5,8 @@ import { TypesComponent } from './features/types/types.component';
 
 const routes: Routes = [
   {path: 'contacts', component: ContactsComponent},
-  {path: 'types', component: TypesComponent}
+  {path: '', component: ContactsComponent},
+  {path: 'types', component: TypesComponent},
 ];
 
 @NgModule({

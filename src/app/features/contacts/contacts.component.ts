@@ -14,7 +14,6 @@ export class ContactsComponent implements OnInit {
   contactsFormGroup: FormGroup;
   contacts: Contact[] = [];
   types: Type[] = [];
-  isEditing: boolean = false;
 
   constructor(private formBuilder: FormBuilder,
               private contactsService: ContactsService,
@@ -52,30 +51,12 @@ export class ContactsComponent implements OnInit {
   }
 
   save(){
-    if (!this.isEditing)
-    {
-      this.contactsService.postContact(this.contactsFormGroup.value).subscribe({
-        next: () => {
-          this.loadContacts();
-          this.contactsFormGroup.reset();
-        }
-      })
-    }
-    else
-    {
-      this.contactsService.putContact(this.contactsFormGroup.value).subscribe({
-        next: () => {
-          this.loadContacts();
-          this.contactsFormGroup.reset();
-          this.isEditing = false;
-        }
-      })
-    }
-  }
-
-  edit(contact: Contact){
-    this.contactsFormGroup.setValue(contact);
-    this.isEditing = true;
+    this.contactsService.postContact(this.contactsFormGroup.value).subscribe({
+      next: () => {
+        this.loadContacts();
+        this.contactsFormGroup.reset();
+      }
+    })
   }
 
   remove(contact: Contact){

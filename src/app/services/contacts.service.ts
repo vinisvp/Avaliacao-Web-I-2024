@@ -19,10 +19,6 @@ export class ContactsService {
     return this.http.get<Contact[]>(this.url);
   }
 
-  putContact(contact: Contact): Observable<Contact>{
-    return this.http.put<Contact>(`${this.url}/${contact.id}`, contact);
-  }
-
   deleteContact(contact: Contact): Observable<void>{
     return this.http.delete<void>(`${this.url}/${contact.id}`);
   }

@@ -18,8 +18,4 @@ export class TypesService {
   getType(): Observable<Type[]>{
     return this.http.get<Type[]>(this.url);
   }
-
-  putType(type: Type): Observable<Type>{
-    return this.http.put<Type>(`${this.url}/${type.id}`, type);
-  }
 }
