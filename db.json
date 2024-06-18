@@ -1,6 +1,17 @@
 {
   "type": [
+    {
+      "id": 1,
+      "name": "Generico"
+    },
+    {
+      "id": 2,
+      "name": "Teste"
+    },
+    {
+      "id": 3,
+      "name": "Outro Teste"
+    }
   ],
-  "contact": [
-  ]
+  "contact": []
 }

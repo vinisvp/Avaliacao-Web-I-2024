@@ -1,1 +1,13 @@
-<p>types works!</p>
+<div class="countainer p-5">
+  <h1>Cadastro de tipo de contato</h1>
+  <form [formGroup]="typesFormGroup">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome do tipo</label>
+      <input type="text"
+             class="form-control"
+             id="name"
+             formControlName="name">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">Add.</button>
+  </form>
+</div>
