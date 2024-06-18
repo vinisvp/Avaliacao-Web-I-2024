@@ -77,4 +77,10 @@ export class ContactsComponent implements OnInit {
     this.contactsFormGroup.setValue(contact);
     this.isEditing = true;
   }
+
+  remove(contact: Contact){
+    this.contactsService.deleteContact(contact).subscribe({
+      next: () => this.loadContacts()
+    })
+  }
 }
