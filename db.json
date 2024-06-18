@@ -6,16 +6,45 @@
     },
     {
       "id": 2,
-      "name": "Teste"
+      "name": "Profissional"
     },
     {
       "id": 3,
-      "name": "Outro Teste"
+      "name": "Futebol"
     },
     {
       "id": 4,
-      "name": "AAAAAA"
+      "name": "Faculdade"
     }
   ],
-  "contact": []
+  "contact": [
+    {
+      "id": 1,
+      "name": "Teste",
+      "telephone": "11912345678",
+      "email": "teste@email.com",
+      "typeId": ""
+    },
+    {
+      "id": 2,
+      "name": "teste2",
+      "telephone": "11912345678",
+      "email": "teste@email.com",
+      "typeId": "1"
+    },
+    {
+      "id": 3,
+      "name": "teste3",
+      "telephone": "11912345678",
+      "email": "teste@email.com",
+      "typeId": 1
+    },
+    {
+      "id": 4,
+      "name": "teste4",
+      "telephone": "11912345678",
+      "email": "teste@email.com",
+      "typeId": 2
+    }
+  ]
 }
