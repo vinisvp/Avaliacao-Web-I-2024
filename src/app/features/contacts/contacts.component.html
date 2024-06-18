@@ -1,26 +1,29 @@
 <div class="countainer p-5">
   <h1>Cadastro de Contatos</h1>
   <form [formGroup]="contactsFormGroup">
-    <div class="mb-3">
-      <label for="name" class="form-label">Nome</label>
+    <div class="form-floating mb-3">
       <input type="text"
              class="form-control"
              id="name"
-             formControlName="name">
+             formControlName="name"
+             placeholder="">
+      <label for="name" class="form-label">Nome</label>
     </div>
-    <div class="mb-3">
-      <label for="telephone" class="form-label">Telefone</label>
+    <div class="form-floating mb-3">
       <input type="tel"
              class="form-control"
              id="telephone"
-             formControlName="telephone">
+             formControlName="telephone"
+             placeholder="">
+      <label for="telephone" class="form-label">Telefone</label>
     </div>
-    <div class="mb-3">
-      <label for="email" class="form-label">Email</label>
+    <div class="form-floating mb-3">
       <input type="email"
              class="form-control"
              id="email"
-             formControlName="email">
+             formControlName="email"
+             placeholder="">
+      <label for="email" class="form-label">Email</label>
     </div>
     <div class="form-check">
       <input class="form-check-input"
@@ -31,14 +34,14 @@
         Favorito
       </label>
     </div>
-    <div class="mb-3">
-      <label for="type">Tipo de Contato</label>
+    <div class="form-floating mb-3">
       <select class="form-select"
               aria-label="Default select example"
               id="type"
               formControlName="typeId">
         <option *ngFor="let type of types" [ngValue]="type.id">{{type.name}}</option>
       </select>
+      <label for="type">Tipo de Contato</label>
     </div>
     <button type="submit" class="btn btn-primary" (click)="save()">
       Add.
