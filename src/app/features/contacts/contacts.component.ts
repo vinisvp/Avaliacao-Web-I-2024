@@ -25,6 +25,7 @@ export class ContactsComponent implements OnInit {
       name:[''],
       telephone:[''],
       email:[''],
+      favorite:[false],
       typeId:['']
     })
   }
@@ -51,8 +52,29 @@ export class ContactsComponent implements OnInit {
   }
 
   save(){
-    this.contactsService.postContact(this.contactsFormGroup.value).subscribe({
-      next: () => this.loadContacts()
-    })
+    if (!this.isEditing)
+    {
+      this.contactsService.postContact(this.contactsFormGroup.value).subscribe({
+        next: () => {
+          this.loadContacts();
+          this.contactsFormGroup.reset();
+        }
+      })
+    }
+    else
+    {
+      this.contactsService.putContact(this.contactsFormGroup.value).subscribe({
+        next: () => {
+          this.loadContacts();
+          this.contactsFormGroup.reset();
+          this.isEditing = false;
+        }
+      })
+    }
+  }
+
+  edit(contact: Contact){
+    this.contactsFormGroup.setValue(contact);
+    this.isEditing = true;
   }
 }

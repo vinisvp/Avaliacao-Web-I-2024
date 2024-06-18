@@ -3,5 +3,6 @@ export interface Contact{
   name: String,
   telephone: number,
   email: String,
+  favorite: boolean,
   typeId: number
 }

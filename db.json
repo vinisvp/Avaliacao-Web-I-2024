@@ -20,31 +20,19 @@
   "contact": [
     {
       "id": 1,
-      "name": "Teste",
+      "name": "Vinicius",
       "telephone": "11912345678",
-      "email": "teste@email.com",
-      "typeId": 1
+      "email": "vini@email.com",
+      "favorite": true,
+      "typeId": 4
     },
     {
       "id": 2,
-      "name": "teste2",
-      "telephone": "11912345678",
-      "email": "teste@email.com",
-      "typeId": 1
-    },
-    {
-      "id": 3,
-      "name": "teste3",
-      "telephone": "11912345678",
-      "email": "teste@email.com",
-      "typeId": 1
-    },
-    {
-      "id": 4,
-      "name": "teste4",
-      "telephone": "11912345678",
-      "email": "teste@email.com",
-      "typeId": 2
+      "name": "Pedro",
+      "telephone": "11987654321",
+      "email": "pedro@email.com",
+      "favorite": false,
+      "typeId": 3
     }
   ]
 }

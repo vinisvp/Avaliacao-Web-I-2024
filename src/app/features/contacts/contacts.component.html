@@ -22,6 +22,15 @@
              id="email"
              formControlName="email">
     </div>
+    <div class="form-check">
+      <input class="form-check-input"
+             type="checkbox"
+             id="favorite"
+             formControlName="favorite">
+      <label class="form-check-label" for="favorite">
+        Favorito
+      </label>
+    </div>
     <div class="mb-3">
       <label for="type">Tipo de Contato</label>
       <select class="form-select"
@@ -32,11 +41,11 @@
       </select>
     </div>
     <button type="submit" class="btn btn-primary" (click)="save()">
-      <!--<span *ngIf="isEditing">Edit.</span>-->
+      <span *ngIf="isEditing">Edit.</span>
       <span *ngIf="!isEditing">Add.</span>
     </button>
   </form>
-  <h1 class="mt-5">Lista de tipos</h1>
+  <h1 class="mt-5">Lista de contatos</h1>
   <div class="table-responsive">
     <table class="table">
       <thead>
@@ -45,8 +54,9 @@
           <th scope="col">Nome</th>
           <th scope="col">Telefone</th>
           <th scope="col">Email</th>
+          <th scope="col">Favorito</th>
           <th scope="col">Tipo</th>
-          <!--<th scope="col">Opções</th>-->
+          <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
@@ -55,8 +65,16 @@
           <td>{{contact.name}}</td>
           <td>{{contact.telephone}}</td>
           <td>{{contact.email}}</td>
+          <td>
+            <div *ngIf="contact.favorite">
+              <span class="badge text-bg-success">Sim</span>
+            </div>
+            <div *ngIf="!contact.favorite">
+              <span class="badge text-bg-danger">Não</span>
+            </div>
+          </td>
           <td>{{getType(contact)?.name}}</td>
-          <!--<td><button type="button" class="btn btn-primary" (click)="edit(type)">Editar</button></td>-->
+          <td><button type="button" class="btn btn-primary" (click)="edit(contact)">Editar</button></td>
         </tr>
       </tbody>
     </table>
