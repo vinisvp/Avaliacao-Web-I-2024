@@ -36,24 +36,30 @@
       <span *ngIf="!isEditing">Add.</span>
     </button>
   </form>
-  <!--<h1 class="mt-5">Lista de tipos</h1>
+  <h1 class="mt-5">Lista de tipos</h1>
   <div class="table-responsive">
     <table class="table">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Nome</th>
-          <th scope="col">Opções</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Tipo</th>
+          <!--<th scope="col">Opções</th>-->
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let type of types">
-          <td>{{type.id}}</td>
-          <td>{{type.name}}</td>
-          <td><button type="button" class="btn btn-primary" (click)="edit(type)">Editar</button></td>
+        <tr *ngFor="let contact of contacts">
+          <td>{{contact.id}}</td>
+          <td>{{contact.name}}</td>
+          <td>{{contact.telephone}}</td>
+          <td>{{contact.email}}</td>
+          <td>{{getType(contact)?.name}}</td>
+          <!--<td><button type="button" class="btn btn-primary" (click)="edit(type)">Editar</button></td>-->
         </tr>
       </tbody>
     </table>
-  </div>-->
+  </div>
 </div>
 

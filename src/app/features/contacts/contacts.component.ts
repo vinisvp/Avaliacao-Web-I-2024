@@ -46,6 +46,10 @@ export class ContactsComponent implements OnInit {
     this.loadTypes();
   }
 
+  getType(contact: Contact): Type | undefined{
+    return this.types.find(t => t.id == contact.typeId);
+  }
+
   save(){
     this.contactsService.postContact(this.contactsFormGroup.value).subscribe({
       next: () => this.loadContacts()
