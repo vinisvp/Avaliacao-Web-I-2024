@@ -11,6 +11,7 @@ import { Type } from './type';
 export class TypesComponent implements OnInit {
   typesFormGroup: FormGroup;
   types: Type[] = [];
+  isEditing: Boolean = false;
 
   constructor(private formBuilder: FormBuilder,
               private typesService: TypesService
@@ -32,8 +33,26 @@ export class TypesComponent implements OnInit {
   }
 
   save(){
-    this.typesService.postType(this.typesFormGroup.value).subscribe({
-      next: () => this.loadTypes()
-    })
+    if (!this.isEditing)
+    {
+      this.typesService.postType(this.typesFormGroup.value).subscribe({
+        next: () => this.loadTypes()
+      })
+    }
+    else
+    {
+      this.typesService.putType(this.typesFormGroup.value).subscribe({
+        next: () =>{
+          this.loadTypes();
+          this.isEditing = false;
+          this.typesFormGroup.reset();
+        }
+      })
+    }
+  }
+
+  edit(type: Type){
+    this.typesFormGroup.setValue(type);
+    this.isEditing = true;
   }
 }
