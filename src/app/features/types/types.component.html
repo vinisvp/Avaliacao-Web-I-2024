@@ -10,4 +10,21 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="save()">Add.</button>
   </form>
+  <h1 class="mt-5">Lista de tipos</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let type of types">
+          <th>{{type.id}}</th>
+          <td>{{type.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
